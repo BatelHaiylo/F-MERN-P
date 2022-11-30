@@ -1,7 +1,6 @@
 const ClothingModel = require('../modals/Clothing_Schema')
 
  const getClothings = async(req, res) => {
-    console.log("hgjh");
     await ClothingModel.find({}).then((result) => {
       return result.length == 0
         ? res.status(300).json({ successes: true, msg: "no Clothings was found" })

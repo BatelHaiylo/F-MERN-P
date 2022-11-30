@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require('mongoose')
 
 const UsersSchema = new mongoose.Schema(
   {
@@ -34,4 +34,5 @@ const UsersSchema = new mongoose.Schema(
   { timeseries: true }
 );
 
-export const UsersModal = mongoose.model("Users", UsersSchema);
+const UsersModal = mongoose.model("Users", UsersSchema)
+module.exports = UsersModal;

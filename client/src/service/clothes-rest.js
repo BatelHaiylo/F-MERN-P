@@ -1,4 +1,4 @@
-baseUrl = 'http://localhost:4080/clothes'
+baseUrl = 'http://localhost:5050/api/clothes'
 
 export const getAllClothes = async() => {
     try{

@@ -1,5 +1,5 @@
 const clothingRouter = require("express").Router()
-const {getClothings, getClothingById, addClothingToDB, updateClothing, deleteClothing } = require('../controllers/clothing-ctrl');
+const {getClothings, getClothingById, addClothingToDB, updateClothing, deleteClothing } = require('../controllers/clothing');
 
 
 clothingRouter.get('/',getClothings);
