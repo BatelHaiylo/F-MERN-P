@@ -1,12 +1,20 @@
 const mongoose = require('mongoose')
 
-const UsersSchema = new mongoose.Schema(
+const SaleSchema = new mongoose.Schema(
   {
+    role: {
+      type: String,
+      default: "user"
+    },
     firstName: {
       type: String,
       required: true,
     },
     lastName: {
+      type: String,
+      required: true,
+    },
+    phone: {
       type: String,
       required: true,
     },
@@ -18,21 +26,16 @@ const UsersSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    password: {
-      type: String,
-      required: true,
-    },
-    passwordValidation: {
-      type: String,
-      required: true,
-    },
     dateOfBirth: {
       type: Date,
+    },
+    password: {
+      type: String,
       required: true,
     },
   },
   { timeseries: true }
 );
 
-const UsersModal = mongoose.model("Users", UsersSchema)
-module.exports = UsersModal;
+const SaleModal = mongoose.model("sale", SaleSchema)
+module.exports = SaleModal;

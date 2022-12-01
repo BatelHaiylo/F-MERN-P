@@ -3,6 +3,9 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 require('./db/db');
+const passport = require('passport')
+require('./config/passport')(passport)
+
 const clothingRouter = require('./router/clothingRouter');
 const usersRouter = require('./router/usersRouter');
 

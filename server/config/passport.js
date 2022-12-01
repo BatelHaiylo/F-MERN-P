@@ -1,5 +1,5 @@
 const { secretKey } = require("../config/keys");
-const UsersModal = require("../model/user_schema");
+const UsersModal = require("../modals/Users_Schema");
 const JwtStrategy = require("passport-jwt").Strategy;
 const ExtractJwt = require("passport-jwt").ExtractJwt;
 
