@@ -1,8 +1,8 @@
-baseUrl = 'http://localhost:5050/api/clothes'
+const baseUrl = 'http://localhost:5050/api/clothes'
 
 export const getAllClothes = async() => {
     try{
-        return await fetch(baseUrl)
+        return await fetch(`${baseUrl}`)
         .then(res => res)
     }catch(e){console.log(e)}
 };

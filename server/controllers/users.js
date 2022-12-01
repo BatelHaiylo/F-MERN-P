@@ -18,6 +18,12 @@ const getUserById = async(req,res) => {
     }).catch(error=> res.status(400).json({ successes: false , error})) 
 };
 
+const addNewUser = async(req,res) => {
+    await UsersModal.create(req.body.user)
+    .then((result)=>{
+        return res.status(200).json({successes: true, result})
+    }).catch(error=> res.status(400).json({ successes: false , error}))
+};
 const addUserToDB = async(req,res) => {
     await UsersModal.insertMany(req.body.user)
     .then((result)=>{
@@ -32,6 +38,12 @@ const updateUser = async(req,res) => {
     }).catch(error=> res.status(400).json({ successes: false , error}))
 };
 
+const deleteAUser = async(req,res) => {
+    await UsersModal.where("email").equals(req.body.user.email).remove()
+    .then((result)=>{
+        return res.status(200).json({successes: true, result})
+    }).catch(error=> res.status(400).json({ successes: false , error}))
+};
 const deleteUser = async(req,res) => {
     await UsersModal.findByIdAndRemove(req.params.id, req.body.user)
     .then((result)=>{

@@ -18,4 +18,4 @@ const CountrySchema = new mongoose.Schema(
 );
 
 const CountryModal = mongoose.model("Country", CountrySchema);
-module.exports = UsersModal;
+module.exports = CountryModal;

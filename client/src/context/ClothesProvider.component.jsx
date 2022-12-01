@@ -5,7 +5,7 @@ export const clothesContext = createContext()
 
 export default function ClothesProvider({children}){
     const [clothes,setClothes] = useState([])
-    useEffect(()=>{getAllClothes().then(res => setClothes(res))},[])
+    useEffect(()=>{getAllClothes().then(res => setClothes(res.items))},[])
 
     return(
         <clothesContext.Provider value={{clothes,setClothes}}>

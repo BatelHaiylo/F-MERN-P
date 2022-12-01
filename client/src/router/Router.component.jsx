@@ -7,9 +7,9 @@ export default function Router(){
     return(
         <Routes>
             <Route path="/" element={<Home/>}/>
-            <Route path="/clothes" element={
+            {/* <Route path="/clothes" element={
                 <ClothesProvider><Clothes/></ClothesProvider>
-            }/>
+            }/> */}
             <Route path="*" element={<PageError/>}/>
         </Routes>
     )

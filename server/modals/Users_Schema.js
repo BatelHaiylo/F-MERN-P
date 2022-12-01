@@ -1,16 +1,39 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
-const SaleSchema = new mongoose.Schema(
+const CountrySchema = new mongoose.Schema(
   {
-    role: {
-      type: String,
-      default: "user"
-    },
-    firstName: {
+    country: {
       type: String,
       required: true,
     },
-    lastName: {
+    state: {
+      type: String,
+    },
+    MobilePrefix: {
+      type: String,
+      required: true,
+    },
+  },
+  { timeseries: true }
+);
+
+const EmployeeSchema = new mongoose.Schema(
+  {
+    name: {type: String, required: true},
+    salary: { type: Number, required: true},
+    position: {type: String, required: true},
+    store: {type: mongoose.SchemaTypes.ObjectId, ref: "store",}
+  },
+  { timeseries: true }
+);
+
+const UserSchema = new mongoose.Schema(
+  {
+    role: {
+      type: String,
+      default: {EmployeeSchema},
+    },
+    fullName: {
       type: String,
       required: true,
     },
@@ -18,13 +41,11 @@ const SaleSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    country: {
-      type: String,
-      required: true,
-    },
+    country: CountrySchema,
     email: {
       type: String,
       required: true,
+      lowercase: true,
     },
     dateOfBirth: {
       type: Date,
@@ -37,5 +58,9 @@ const SaleSchema = new mongoose.Schema(
   { timeseries: true }
 );
 
-const SaleModal = mongoose.model("sale", SaleSchema)
-module.exports = SaleModal;
+UserSchema.statics.ByName = function (name) {
+  return this.where({ name: new RegExp(name, "i") });
+};
+
+const UserModal = mongoose.model("user", UserSchema);
+module.exports = UserModal;

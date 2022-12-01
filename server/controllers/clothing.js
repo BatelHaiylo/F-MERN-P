@@ -1,10 +1,10 @@
 const ClothingModel = require('../modals/Clothing_Schema')
 
  const getClothings = async(req, res) => {
-    await ClothingModel.find({}).then((result) => {
-      return result.length == 0
+    await ClothingModel.find({}).then((items) => {
+      return items.length == 0
         ? res.status(300).json({ successes: true, msg: "no Clothings was found" })
-        : res.status(200).json({ successes: true , result});
+        : res.status(200).json({ successes: true , items});
     })
   .catch (error=> res.status(400).json({ successes: false , error})) 
 };

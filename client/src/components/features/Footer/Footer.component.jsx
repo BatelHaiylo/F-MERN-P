@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="bottom">
       <Container>
-        <Navbar.Brand href="#home">Sportstar</Navbar.Brand>
+        <Navbar.Brand href="#home">Data</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
