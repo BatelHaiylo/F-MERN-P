@@ -4,19 +4,12 @@ const app = express();
 const cors = require('cors');
 require('./db/db');
 const passport = require('passport')
-require('./config/passport')(passport)
-
-const clothingRouter = require('./router/clothingRouter');
-const usersRouter = require('./router/usersRouter');
 
 const Port = process.env.PORT
 
 app.use(cors())
 app.use(express.json({extended: true}));
 app.use(express.urlencoded({extended: true}));
-
-app.use('/api/users', usersRouter)
-app.use('/api/clothes', clothingRouter)
 
 app.get('/',(req,res)=>{
     res.send("got your request")
