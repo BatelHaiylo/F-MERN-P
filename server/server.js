@@ -8,6 +8,7 @@ require('./config/passport')(passport)
 
 const clothingRouter = require('./router/clothingRouter');
 const usersRouter = require('./router/usersRouter');
+const purchasesRouter = require('./router/purchasesRouter')
 
 const Port = process.env.PORT
 
@@ -16,6 +17,7 @@ app.use(express.json({extended: true}));
 app.use(express.urlencoded({extended: true}));
 
 app.use('/api/users', usersRouter)
+app.use('/api/purchases', purchasesRouter)
 app.use('/api/clothes', clothingRouter)
 
 app.get('/',(req,res)=>{

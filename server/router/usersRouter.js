@@ -8,6 +8,6 @@ usersRouter.post('/add',addUserToDB);
 usersRouter.put('/update/:id',updateUser);
 usersRouter.delete('/delete/:id',deleteUser);
 usersRouter.post('/signup', signUp)
-usersRouter.post('signin', signIn)
+usersRouter.post('/signin', signIn)
 
 module.exports = usersRouter

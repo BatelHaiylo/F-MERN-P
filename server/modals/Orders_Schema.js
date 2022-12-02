@@ -17,6 +17,10 @@ const OrderSchema = new mongoose.Schema(
     userDetails: { type: mongoose.SchemaTypes.ObjectId, ref: "User"},
     itemsNumber: { type: Number, required: true },
     sum: { type: String, required: true },
+    product: { 
+      type: mongoose.SchemaTypes.ObjectId, 
+      ref: "product"
+    },
   },
   { timeseries: true }
 );

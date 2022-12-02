@@ -1,14 +1,14 @@
 const validator = require('validator');
 const isEmpty = require('is-empty');
 
-const validateRegister = (user) => {
+const validateSignUp = (user) => {
     errors = {};
-    user.name = isEmpty(user.name) ? "" : user.name;
+    user.name = isEmpty(user.fullName) ? "" : user.fullName;
     user.email = isEmpty(user.email) ? "" : user.email;
     user.password = isEmpty(user.password) ? "" : user.password;
     user.passwordConfirm = isEmpty(user.passwordConfirm) ? "" : user.passwordConfirm;
 
-    if (validator.isEmpty(user.name)) errors.name = "First Name Is required";
+    if (validator.isEmpty(user.fullName)) errors.fullName = "First Name Is required";
     if (validator.isEmpty(user.email)) errors.email = "email Is required";
     if(!validator.isEmail(user.email)) errors.email = "email Is not valid";
     if (validator.isEmpty(user.password)) errors.password = "password Is required";
@@ -18,8 +18,7 @@ const validateRegister = (user) => {
         isValid: isEmpty(errors)
     }
 }
-
-const validateLogin = (user) => {
+const validateSignIn = (user) => {
     errors = {};
     user.email = isEmpty(user.email) ? "" : user.email;
     user.password = isEmpty(user.password) ? "" : user.password;
@@ -33,4 +32,4 @@ const validateLogin = (user) => {
     }
 }
 
-module.exports = { validateRegister,validateLogin }
+module.exports = { validateSignUp,validateSignIn }

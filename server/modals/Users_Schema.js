@@ -6,7 +6,7 @@ const CountrySchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    state: {
+    city: {
       type: String,
     },
     MobilePrefix: {

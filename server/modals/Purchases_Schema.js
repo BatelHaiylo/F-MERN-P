@@ -1,10 +1,11 @@
-const mongoose = require('mongoose')
+const randomToken = require('rand-token');
+const mongoose = require("mongoose");
 
 const PurchaseSchema = new mongoose.Schema(
   {
     receiptNum: {
       type: String,
-      require: true,
+      require: true
     },
     purchaserInfo: {
       itemsNum: {
@@ -18,7 +19,7 @@ const PurchaseSchema = new mongoose.Schema(
       user: {
         type: mongoose.SchemaTypes.ObjectId,
         ref: "User",
-        },
+      },
     },
     purchaseSum: {
       type: Number,
@@ -28,5 +29,5 @@ const PurchaseSchema = new mongoose.Schema(
   { timeseries: true }
 );
 
-const PurchasesModal = mongoose.model("purchases", PurchaseSchema)
+const PurchasesModal = mongoose.model("purchases", PurchaseSchema);
 module.exports = PurchasesModal;
