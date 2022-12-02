@@ -1,16 +1,16 @@
 const mongoose = require("mongoose");
 
-const SaleSchema = new mongoose.Schema(
-  {
-    saleName: { type: String, required: true },
-    startDate: { type: Date, required: true },
-    endDate: { type: Date, required: true },
-    categories: { type: Object, required: true },
-    discountPercentage: { type: Number, required: true },
-    isOnline: { type: Boolean, required: true },
-  },
-  { timeseries: true }
-);
+// const SaleSchema = new mongoose.Schema(
+//   {
+//     saleName: { type: String, required: true },
+//     startDate: { type: Date, required: true },
+//     endDate: { type: Date, required: true },
+//     categories: { type: Object, required: true },
+//     discountPercentage: { type: Number, required: true },
+//     isOnline: { type: Boolean, required: true },
+//   },
+//   { timestamps: true }
+// );
 
 const DepartmentSchema = new mongoose.Schema(
   {
@@ -19,7 +19,7 @@ const DepartmentSchema = new mongoose.Schema(
       required: true
     },
   },
-  { timeseries: true }
+  { timestamps: true }
 );
 
 
@@ -36,10 +36,7 @@ const ProductSchema = new mongoose.Schema(
       type: DepartmentSchema,
       required: true,
     },
-    color: { 
-      type: String, 
-      require: true 
-    },
+
     price: {
       type: Number,
       required: true,
@@ -52,9 +49,16 @@ const ProductSchema = new mongoose.Schema(
       type: Boolean,
       required: true,
     },
-    sale: SaleSchema
+    sale: {
+        saleName: { type: String },
+        startDate: { type: Date },
+        endDate: { type: Date },
+        discountPercentage: { type: Number },
+        salePrice: { type: Number },
+        isOnline: { type: Boolean },
+    }
   },
-  { timeseries: true }
+  { timestamps: true }
 );
 
 

@@ -14,7 +14,7 @@ const CountrySchema = new mongoose.Schema(
       required: true,
     },
   },
-  { timeseries: true }
+  { timestamps: true }
 );
 
 const CountryModal = mongoose.model("Country", CountrySchema);

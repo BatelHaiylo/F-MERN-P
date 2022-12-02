@@ -14,7 +14,7 @@ const CountrySchema = new mongoose.Schema(
       required: true,
     },
   },
-  { timeseries: true }
+  { timestamps: true }
 );
 
 const EmployeeSchema = new mongoose.Schema(
@@ -24,7 +24,7 @@ const EmployeeSchema = new mongoose.Schema(
     position: {type: String, required: true},
     store: {type: mongoose.SchemaTypes.ObjectId, ref: "store",}
   },
-  { timeseries: true }
+  { timestamps: true }
 );
 
 const UserSchema = new mongoose.Schema(
@@ -55,7 +55,7 @@ const UserSchema = new mongoose.Schema(
       required: true,
     },
   },
-  { timeseries: true }
+  { timestamps: true }
 );
 
 UserSchema.statics.ByName = function (name) {

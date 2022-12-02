@@ -6,9 +6,9 @@ require('./db/db');
 const passport = require('passport')
 require('./config/passport')(passport)
 
-const clothingRouter = require('./router/clothingRouter');
 const usersRouter = require('./router/usersRouter');
-const purchasesRouter = require('./router/purchasesRouter')
+const purchasesRouter = require('./router/purchasesRouter');
+const productsRouter = require('./router/productsRouter');
 
 const Port = process.env.PORT
 
@@ -18,7 +18,7 @@ app.use(express.urlencoded({extended: true}));
 
 app.use('/api/users', usersRouter)
 app.use('/api/purchases', purchasesRouter)
-app.use('/api/clothes', clothingRouter)
+app.use('/api/products', productsRouter)
 
 app.get('/',(req,res)=>{
     res.send("got your request")

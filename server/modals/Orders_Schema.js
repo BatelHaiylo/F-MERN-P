@@ -7,22 +7,22 @@ const RevenueSchema = new mongoose.Schema(
       required: true
     },
   },
-  { timeseries: true }
+  { timestamps: true }
 );
 
 const OrderSchema = new mongoose.Schema(
   {
-    orderNumber: { type: Number, required: true },
-    orderDate: { type: Date, required: true },
-    userDetails: { type: mongoose.SchemaTypes.ObjectId, ref: "User"},
-    itemsNumber: { type: Number, required: true },
-    sum: { type: String, required: true },
-    product: { 
+    orderNumber: { 
       type: mongoose.SchemaTypes.ObjectId, 
-      ref: "product"
+      ref: "purchases",
+      required: true 
+    },
+    product: { 
+      type: [mongoose.SchemaTypes.ObjectId], 
+      ref: "products"
     },
   },
-  { timeseries: true }
+  { timestamps: true }
 );
 
 const OrderModal = mongoose.model("order", OrderSchema);
