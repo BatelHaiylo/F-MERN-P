@@ -12,15 +12,15 @@ const RevenueSchema = new mongoose.Schema(
 
 const OrderSchema = new mongoose.Schema(
   {
-    orderNumber: { 
-      type: mongoose.SchemaTypes.ObjectId, 
+    orderInfo: { 
+      type: mongoose.Schema.Types.ObjectId,
       ref: "purchases",
       required: true 
     },
-    product: { 
-      type: [mongoose.SchemaTypes.ObjectId], 
+    products: [{ 
+      type: mongoose.Schema.Types.ObjectId,
       ref: "products"
-    },
+    }],
   },
   { timestamps: true }
 );

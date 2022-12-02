@@ -1,7 +1,7 @@
 const PurchasesModal = require("../modals/Purchases_Schema");
 
 const getPurchases = async (req, res) => {
-  await PurchasesModal.find({}).populate("user")
+  await PurchasesModal.find({}).populate("purchaserInfo.user")
     .then((purchases) => {
       purchases.length == 0
         ? res.status(300).json({ success: false, message: "no purchases was found" })

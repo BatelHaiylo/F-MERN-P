@@ -1,7 +1,7 @@
 const OrderModal = require("../modals/Orders_Schema");
 
 const getOrders = async (req, res) => {
-  await OrderModal.find({}).populate("orderNumber").populate("product")
+  await OrderModal.find({}).populate("orderInfo")
     .then((orders) => {
       orders.length == 0
         ? res.status(300).json({ success: false, message: "no orders was found" })
