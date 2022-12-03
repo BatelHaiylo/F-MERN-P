@@ -1,31 +1,31 @@
-const baseUrl = 'http://localhost:5050/api/users'
+const baseUrl = 'http://localhost:5050/api/products'
 
-export const getAllUsers = async() => {
+export const getAllProducts = async() => {
     try{
         return await fetch(`${baseUrl}`)
         .then(res => res.json())
     }catch(e){console.log(e)}
 };
 
-export const getAUserById = async(id) => {
+export const getAProductById = async(id) => {
     try{
         return await fetch(`${baseUrl}/byId/${id}`)
         .then(res => res.json())
     }catch(e){console.log(e)}
 };
 
-export const getAUserByParam = async(param) => {
+export const getAProductByParam = async(param) => {
     try{
         return await fetch(`${baseUrl}/${param}`)
         .then(res => res.json())
     }catch(e){console.log(e)}
 };
 
-export const addAUser = async(newUser) => {
+export const addAProduct = async(newProduct) => {
     const Options = {
         method:'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(newUser)
+        body: JSON.stringify(newProduct)
     }
     try{
         return await fetch(`${baseUrl}/add`, Options)
@@ -33,26 +33,26 @@ export const addAUser = async(newUser) => {
     }catch(e){console.log(e)}
 };
 
-export const updateAUser = async(userToUpdate,userNewInfo) => {
+export const updateAProduct = async(productToUpdate,ProductNewInfo) => {
     const Options = {
         method:'PUT',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(userNewInfo)
+        body: JSON.stringify(ProductNewInfo)
     }
     try{
-        return await fetch(`${baseUrl}/update/${userToUpdate._id}`, Options)
+        return await fetch(`${baseUrl}/update/${productToUpdate._id}`, Options)
         .then(res => res.json())
     }catch(e){console.log(e)}
 };
 
-export const deleteAUser = async(userToDelete) => {
+export const deleteAProduct = async(ProductToDelete) => {
     const Options = {
         method:'DELETE',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(userToDelete)
+        body: JSON.stringify(ProductToDelete)
     }
     try{
-        return await fetch(`${baseUrl}/delete/${userToDelete._id}`, Options)
+        return await fetch(`${baseUrl}/delete/${ProductToDelete._id}`, Options)
         .then(res => res.json())
     }catch(e){console.log(e)}
 };

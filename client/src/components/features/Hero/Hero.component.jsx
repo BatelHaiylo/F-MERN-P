@@ -4,25 +4,14 @@ export default function Hero() {
   return (
     <Card className="bg-dark text-white">
       <Card.Img
-        src="https://images.pexels.com/photos/33703/relay-race-competition-stadium-sport.jpg"
+        src="https://i.dailymail.co.uk/1s/2020/05/12/15/28302814-8311735-image-m-92_1589292158179.jpg"
         alt="Card image"
       />
       <Card.ImgOverlay>
         <Card.Title>
-          <h1>Sportstar</h1>
+          <img src="https://cdn.shopify.com/s/files/1/2170/8465/files/Metallic_Steve_Madden_Pink_and_Red-01_300x.png?v=3022404403441632771" alt="logo"/>
         </Card.Title>
-        <Card.Text>
-          <h3>LOW-PRICED SPORTSWEAR IN HIGH QUALITY BY FAMOUS BRANDS</h3>
-          We love sports – and nice prices! Here at SportSpar, we offer a huge
-          choice of selected sportswear and accessories at unbeatable low
-          prices.
-          <br />
-          From non-slipping footwear and matching sportswear to merchandise of
-          your favourite club – we sell everything that makes your
-          <br />
-          athlete’s heart beat faster!
-        </Card.Text>
-        <Card.Text>Last updated 3 mins ago</Card.Text>
+
       </Card.ImgOverlay>
     </Card>
   );

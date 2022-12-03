@@ -10,14 +10,13 @@ export default function Header() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/clothes">clothes</Nav.Link>
-            <Nav.Link href="/shoes">shoes</Nav.Link>
-            <Nav.Link href="/gear">gear</Nav.Link>
+            <Nav.Link eventKey={2} href="/dashboard">Dashboard</Nav.Link>
+            <Nav.Link href="/dashboard">Cashier</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link href="/cart">Cart</Nav.Link>
-            <Nav.Link eventKey={2} href="/profile">
-              Profile
+            <Nav.Link href="/signup">sign up</Nav.Link>
+            <Nav.Link href="/signin">
+            sign in
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

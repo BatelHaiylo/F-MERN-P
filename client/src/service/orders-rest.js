@@ -1,31 +1,31 @@
-const baseUrl = 'http://localhost:5050/api/users'
+const baseUrl = 'http://localhost:5050/api/orders'
 
-export const getAllUsers = async() => {
+export const getAllOrders = async() => {
     try{
         return await fetch(`${baseUrl}`)
         .then(res => res.json())
     }catch(e){console.log(e)}
 };
 
-export const getAUserById = async(id) => {
+export const getAOrderById = async(id) => {
     try{
         return await fetch(`${baseUrl}/byId/${id}`)
         .then(res => res.json())
     }catch(e){console.log(e)}
 };
 
-export const getAUserByParam = async(param) => {
+export const getAOrderByParam = async(param) => {
     try{
         return await fetch(`${baseUrl}/${param}`)
         .then(res => res.json())
     }catch(e){console.log(e)}
 };
 
-export const addAUser = async(newUser) => {
+export const addAOrder = async(newOrder) => {
     const Options = {
         method:'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(newUser)
+        body: JSON.stringify(newOrder)
     }
     try{
         return await fetch(`${baseUrl}/add`, Options)
@@ -33,26 +33,26 @@ export const addAUser = async(newUser) => {
     }catch(e){console.log(e)}
 };
 
-export const updateAUser = async(userToUpdate,userNewInfo) => {
+export const updateAnOrder = async(orderToUpdate,OrderNewInfo) => {
     const Options = {
         method:'PUT',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(userNewInfo)
+        body: JSON.stringify(OrderNewInfo)
     }
     try{
-        return await fetch(`${baseUrl}/update/${userToUpdate._id}`, Options)
+        return await fetch(`${baseUrl}/update/${orderToUpdate._id}`, Options)
         .then(res => res.json())
     }catch(e){console.log(e)}
 };
 
-export const deleteAUser = async(userToDelete) => {
+export const deleteAnOrder = async(OrderToDelete) => {
     const Options = {
         method:'DELETE',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(userToDelete)
+        body: JSON.stringify(OrderToDelete)
     }
     try{
-        return await fetch(`${baseUrl}/delete/${userToDelete._id}`, Options)
+        return await fetch(`${baseUrl}/delete/${OrderToDelete._id}`, Options)
         .then(res => res.json())
     }catch(e){console.log(e)}
 };
