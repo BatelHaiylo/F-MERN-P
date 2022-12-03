@@ -6,7 +6,9 @@ export default function Header() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
       <Container>
-        <Navbar.Brand href="/">DATA</Navbar.Brand>
+        <Navbar.Brand href="/" style={{color:'#cd2134'}}>
+          <b style={{color:'#fff'}}>DATA</b>THAT
+          </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">

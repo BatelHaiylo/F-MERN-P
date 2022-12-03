@@ -20,8 +20,8 @@ export default function SaleInfo({info}) {
           <Modal.Title>{saleName}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-            <span></span>
-            <span></span>
+            <span>from {startDate} to {endDate}</span>
+            <span>{isOnline? <span>the product is on sale online</span>: ""}</span>
             <span></span>
             <span></span>
             </Modal.Body>
