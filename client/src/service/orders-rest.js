@@ -16,10 +16,17 @@ export const getAOrderById = async(id) => {
 
 export const getAOrderByParam = async(param) => {
     try{
-        return await fetch(`${baseUrl}/${param}`)
+        return await fetch(`${baseUrl}/byParam/${param}`)
         .then(res => res.json())
     }catch(e){console.log(e)}
 };
+
+export const getHighPriceOrders = async() => {
+    try{
+        return await fetch(`${baseUrl}/HighPrice`)
+        .then(res => res.json())
+    }catch(e){console.log(e)}
+}; 
 
 export const addAOrder = async(newOrder) => {
     const Options = {

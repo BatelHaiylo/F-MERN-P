@@ -17,9 +17,9 @@ const OrderSchema = new mongoose.Schema(
       ref: "purchases",
       required: true 
     },
-    products: [{ 
+    product: [{ 
       type: mongoose.Schema.Types.ObjectId,
-      ref: "products"
+      ref: "product"
     }],
   },
   { timestamps: true }

@@ -1,7 +1,9 @@
 const OrderModal = require("../modals/Orders_Schema");
 
 const getOrders = async (req, res) => {
-  await OrderModal.find({}).populate("orderInfo")
+  await OrderModal.find({})
+  .populate("orderInfo")
+  .populate("product")
     .then((orders) => {
       orders.length == 0
         ? res.status(300).json({ success: false, message: "no orders was found" })
@@ -18,6 +20,26 @@ const getOrderById = async (req, res) => {
       return !result
         ? res.status(200).json({ successes: true }, result)
         : res.status(300).json({ successes: false, msg: "no order was found" });
+    })
+    .catch((error) => res.status(400).json({ successes: false, error }));
+};
+
+const getOrderByParam = async (req, res) => {
+  await OrderModal.findById(req.params.param)
+    .then((result) => {
+      return !result
+        ? res.status(200).json({ successes: true }, result)
+        : res.status(300).json({ successes: false, msg: "no order was found" });
+    })
+    .catch((error) => res.status(400).json({ successes: false, error }));
+};
+
+const getHighPriceOrders = async (req, res) => {
+  await OrderModal.where("price").gt(700)
+    .then((result) => {
+      return !result
+        ? res.status(200).json({ successes: true }, result)
+        : res.status(300).json({ successes: false, msg: "no order in that price was found" });
     })
     .catch((error) => res.status(400).json({ successes: false, error }));
 };
@@ -62,4 +84,4 @@ const deleteOrder = async (req, res) => {
     .catch((error) => res.status(400).json({ successes: false, error }));
 };
 
-module.exports = { getOrders, getOrderById, addOrderToDB, updateOrder, deleteOrder };
+module.exports = { getOrders, getOrderById, addOrderToDB, updateOrder, deleteOrder,getOrderByParam, getHighPriceOrders };

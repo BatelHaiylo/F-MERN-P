@@ -4,7 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 
 export default function SaleInfo({info}) {
   const [show, setShow] = useState(false);
-  const {discountPercentage,endDate,isOnline,saleName,salePrice,startDate,updatedAt,_id} = info
+  const {discountPercentage,endDate,isOnline,saleName,startDate} = info
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);  
@@ -20,10 +20,10 @@ export default function SaleInfo({info}) {
           <Modal.Title>{saleName}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-            <span>from {startDate} to {endDate}</span>
-            <span>{isOnline? <span>the product is on sale online</span>: ""}</span>
-            <span></span>
-            <span></span>
+            <span>from {startDate} to {endDate}</span><br/>
+            <span>{isOnline? <span>the product is on sale online</span>: ""}</span><br/>
+            <span>discount percentage: {discountPercentage}</span><br/>
+            <span></span><br/>
             </Modal.Body>
         <Modal.Footer>
 

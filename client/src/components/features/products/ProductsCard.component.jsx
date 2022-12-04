@@ -6,15 +6,13 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
 export default function ProductsCard({ items }) {
-  console.log(items);
 
   return (
     <>
-      <Row xs={1} md={3} className="g-1">
+      <Row xs={1} md={3} className="g-4">
         {items ? (
           items.slice(0,3).map(
             ({
-              _id,
               ProductName,
               img,
               department,
@@ -24,14 +22,14 @@ export default function ProductsCard({ items }) {
               sale,
               updatedAt,
               createdAt,
-            }) => (
-              <Col>
-                <Card key={_id} style={{ width: "18rem" }}>
+            },index) => (
+              <Col key={index} style={{ width: "10rem", height: "5rem"  }}>
+                <Card  style={{ width: "10rem", height: "10rem"  }}>
                   <Card.Img variant="top" src={img} />
                   <Card.Body>
                     <Card.Title>{ProductName}</Card.Title>
                     <Card.Text>
-                      <span>department: {department.departmentName}</span>
+                      <b>{department.departmentName}</b><br/>
                       <span>
                         price:{" "}
                         {isOnSale ? (
@@ -44,9 +42,9 @@ export default function ProductsCard({ items }) {
                         ) : (
                           <span>{price}</span>
                         )}
-                      </span>
-                      <span>quantity: {quantity}</span>
-                      <span>added in: {createdAt}</span>
+                      </span><br/>
+                      <span>quantity:<b>{quantity}</b></span><br/>
+                      <span>added in: {createdAt.slice(0,11)}</span><br/>
                       <span>
                         sale:{" "}
                         {isOnSale ? (
@@ -54,8 +52,8 @@ export default function ProductsCard({ items }) {
                         ) : (
                           <span>{ isOnSale }</span>
                         )}
-                      </span>
-                      <span>last update: {updatedAt}</span>
+                      </span><br/>
+                      <span>last update: {updatedAt.slice(0,11)}</span><br/>
                     </Card.Text>
                     <Button variant="primary">MORE DATA</Button>
                   </Card.Body>
@@ -64,7 +62,7 @@ export default function ProductsCard({ items }) {
             )
           )
         ) : (
-          <Card style={{ width: "18rem" }}>
+          <Card style={{ width: "10rem" }}>
             <Card.Body>no products was found</Card.Body>
           </Card>
         )}
