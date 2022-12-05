@@ -16,7 +16,6 @@ export default function Dashboard() {
   const { products } = useContext(productsContext);
   const { orders } = useContext(ordersContext);
   const { users } = useContext(usersContext);
-
   return (
     <>
       <br />

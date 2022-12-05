@@ -37,7 +37,7 @@ const signIn = async (req, res) => {
     if (!isValid) return res.status(400).json(errors);
     const email = req.body.user.email;
     const password = req.body.user.password;
-    await userModel.findOne({ email }).then((user) => {
+    await UsersModal.findOne({ email }).then((user) => {
       if (!user) {
         return res.status(404).json({ emailNotFound: "Email not found" });
       }
@@ -48,7 +48,7 @@ const signIn = async (req, res) => {
             name: user.name,
             email: user.email,
           };
-          jwt.sign(payload, key, { expiresIn: 31556926 }, (err, token) => {
+          jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: 31556926 }, (err, token) => {
             if (err) return res.status(400).json({ err, message: "balala" });
             res.json({ success: true, token: `Bearer ${token}` });
           });

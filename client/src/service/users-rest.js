@@ -56,3 +56,16 @@ export const deleteAUser = async(userToDelete) => {
         .then(res => res.json())
     }catch(e){console.log(e)}
 };
+
+export const signUp = async(newUser) => {
+    const Options = {
+        method:'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(newUser)
+    }
+    try{
+        return await fetch(`${baseUrl}/signup`, Options)
+        .then(res => res.json())
+    }catch(e){console.log(e)}
+};
+ 

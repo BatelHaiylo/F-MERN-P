@@ -1,10 +1,11 @@
 import React from 'react'
 
-export default function Login() {
+function SignIn() {
   return (
-  <>
-    <div>email</div>
-    <div>password</div>
-    </>
+    <div>
+        
+    </div>
   )
-};
+}
+
+export default SignIn

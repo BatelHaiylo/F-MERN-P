@@ -28,7 +28,7 @@ export default function HighestOrderDay({ items }) {
     // console.log(HighestOrderObj);
 
   let HighObjDate = HighestOrderObj?.orderInfo.purchaserInfo.date;
-    console.log("OBG:" ,HighObjDate);
+    // console.log("OBG:" ,HighObjDate);
 
   let date = new Date(HighObjDate);
   const day = WeekDays[date.getDay()];

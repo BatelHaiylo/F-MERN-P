@@ -4,6 +4,8 @@ import { Paper } from '@mui/material'
 
 export default function SmartTable({data}) {
     // console.log(data)
+
+    // console.log(data)
   const customersColumns = [
     {
       field: 'id',
@@ -69,12 +71,14 @@ export default function SmartTable({data}) {
     }
   ];
 
- const customersRows = [
-    { id: 1, role: 'Snow', fullName: 'Jon', phone: 35, email: 'dateOfBirth', dateOfBirth: 103, location: 'USA' }
-  ];
+ const customersRows = [...data?.map((obj,i)=>obj =  
+    { id:i, role: obj.role, fullName: obj.fullName, phone: `${obj.country.MobilePrefix}-${obj.phone}`,
+     email: obj.email, dateOfBirth: new Date(obj.dateOfBirth), location: obj.country.country})];
+     
+    console.log(customersRows)
 
   return (
-    <div className="customers">
+    <div className="employees">
       <Paper  style={{ height: '50vh', width: '40vw', marginTop: '1rem' }}>
         <DataGrid
           rows={customersRows}
