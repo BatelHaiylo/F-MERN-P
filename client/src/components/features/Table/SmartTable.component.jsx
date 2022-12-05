@@ -75,7 +75,7 @@ export default function SmartTable({data}) {
     { id:i, role: obj.role, fullName: obj.fullName, phone: `${obj.country.MobilePrefix}-${obj.phone}`,
      email: obj.email, dateOfBirth: new Date(obj.dateOfBirth), location: obj.country.country})];
      
-    console.log(customersRows)
+    // console.log(customersRows)
 
   return (
     <div className="employees">

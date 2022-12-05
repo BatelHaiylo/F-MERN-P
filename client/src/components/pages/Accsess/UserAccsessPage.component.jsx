@@ -1,11 +1,16 @@
 import React from "react";
 import SignUp from "../../features/Form/SignUp.component";
+import SignIn from "../../features/Form/SignIn.component";
+import { usersContext } from "../../../context/UsersProvider.component";
 
-export default function UserAccsessPage() {
+export default function SignUpPage() {
+
+    const display = ( ) => {}
   return (
     <div>
-      <h1>SignUp</h1>
-      <SignUp/>
+        <button onClick={()=>display}>I AM NEW EMPLOYEE</button>
+      <SignIn />
+      <SignUp />
     </div>
   );
 }

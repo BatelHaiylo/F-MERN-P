@@ -3,7 +3,7 @@ const isEmpty = require('is-empty');
 
 const validateSignUp = (user) => {
     errors = {};
-    user.name = isEmpty(user.fullName) ? "" : user.fullName;
+    user.fullName = isEmpty(user.fullName) ? "" : user.fullName;
     user.email = isEmpty(user.email) ? "" : user.email;
     user.password = isEmpty(user.password) ? "" : user.password;
     user.passwordConfirm = isEmpty(user.passwordConfirm) ? "" : user.passwordConfirm;

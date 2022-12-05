@@ -8,6 +8,7 @@ import OrderPerMonthChart from "../../features/Charts/OrderPerMonthChart.compone
 import DoughnutChart from "../../features/Charts/DoughnutChart.component";
 import OrderPerDayChart from "../../features/Charts/OrderPerDayChart.component";
 import HighestOrderDay from "../../features/orders/HighestOrderDay.component";
+import GeoChart from "../../features/Charts/GeoChart.component";
 import SmartTable from "../../features/Table/SmartTable.component";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -26,7 +27,6 @@ export default function Dashboard() {
           </div>
         </Col>
 
-        {/* number of orders per month */}
         <Col>
         <div style={{ width: '30rem', height: '15rem' }}>
             <OrderPerMonthChart items={orders} />
@@ -55,6 +55,12 @@ export default function Dashboard() {
         <Col>
           <div style={{ width: '30rem', height: '15rem' }}>
             <HighestOrderDay items={orders} />
+          </div>
+        </Col>
+
+        <Col>
+          <div style={{ width: '30px', height: '15px' }}>
+            <GeoChart items={users} />
           </div>
         </Col>
 

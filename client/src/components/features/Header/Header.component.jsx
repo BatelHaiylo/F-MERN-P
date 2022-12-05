@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
       <Container>
-        <Navbar.Brand href="/home" style={{color:'#cd2134'}}>
+        <Navbar.Brand href="/" style={{color:'#cd2134'}}>
           <b style={{color:'#fff'}}>DATA</b>THAT
           </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -16,10 +16,7 @@ export default function Header() {
             <Nav.Link href="/dashboard">Cashier</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link href="/">sign up</Nav.Link>
-            <Nav.Link href="/signin">
-            sign in
-            </Nav.Link>
+            <Nav.Link href="/signin">sign in</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
