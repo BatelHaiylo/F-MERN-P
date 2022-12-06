@@ -1,3 +1,4 @@
+import './product.css'
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
@@ -23,10 +24,10 @@ export default function ProductsCard({ items }) {
               updatedAt,
               createdAt,
             },index) => (
-              <Col key={index} style={{ width: "10rem", height: "5rem"  }}>
-                <Card  style={{ width: "10rem", height: "10rem"  }}>
+              <Col sm='3'  key={index} >
+                <Card >
                   <Card.Img variant="top" src={img} />
-                  <Card.Body>
+                  <Card.Body >
                     <Card.Title>{ProductName}</Card.Title>
                     <Card.Text>
                       <b>{department.departmentName}</b><br/>
@@ -55,7 +56,7 @@ export default function ProductsCard({ items }) {
                       </span><br/>
                       <span>last update: {updatedAt.slice(0,11)}</span><br/>
                     </Card.Text>
-                    <Button variant="primary">MORE DATA</Button>
+                    <Button variant="secondary">MORE DATA</Button>
                   </Card.Body>
                 </Card>
               </Col>

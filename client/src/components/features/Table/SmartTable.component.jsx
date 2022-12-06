@@ -78,8 +78,9 @@ export default function SmartTable({data}) {
     // console.log(customersRows)
 
   return (
-    <div className="employees">
-      <Paper  style={{ height: '50vh', width: '40vw', marginTop: '1rem' }}>
+    <div className="employees pb-5 mb-5">
+      <h6>Employees table</h6>
+      <Paper  style={{ height: '50vh', marginTop: '1rem' }}>
         <DataGrid
           rows={customersRows}
           columns={customersColumns}

@@ -24,6 +24,19 @@ export default function DoughnutChart({items}) {
     const ShoulderCategoryArr = items.filter(function(item){
         return (item.department.departmentName == "Shoulder Bags" || item.department.departmentName == "SHOULDER BAGS" )});
 
+        const options = {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: "top",
+            },
+            title: {
+              display: true,
+              text: "Products category chart",
+            },
+          },
+        };
+
 const Categories = {
     all: items.length,
     Crossbody: CrossbodyCategoryArr.length,
@@ -60,5 +73,5 @@ const Categories = {
       ],
     };
 
-  return <Doughnut data={data} />;
+  return <Doughnut options={options} data={data} />;
 }
