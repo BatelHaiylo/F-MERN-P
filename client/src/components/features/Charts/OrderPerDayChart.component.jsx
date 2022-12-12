@@ -23,7 +23,6 @@ export default function OrderPerDayChart({ items }) {
 
 let sum = 0
 const SumPerObj =[...items.map(obj => obj.product.map(item => sum += item.price))]
-// console.log();
 // console.log("sum :" ,SumPerObj.map(item => item.reduce((a,b)=> a+b,0)));
 // console.log("avg :" ,SumPerObj.map(item => item.reduce((a,b)=> a+b,0) / item.length));
 
@@ -50,15 +49,11 @@ const SumPerObj =[...items.map(obj => obj.product.map(item => sum += item.price)
         backgroundColor: "#9ff0ed",
       },
       {
-        label: "Avg of sum per chart ",
+        label: "Avg of purchases per day",
         data: SumPerObj.map(item => item.reduce((a,b)=> a+b,0) / item.length),
             backgroundColor: "#cfe2ff"
         },
-    ],
+    ]
 };
 return <Bar options={options} data={data} />;
-}
-// data: items.slice(0, 7).map(item => (item.product.reduce((a, b) => a.price + b.price)) / (item.product.length)),
-
-// (+item.product[2].price) + (+item.product[0].price) +  (+item.product[1].price)
-// .product.reduce((a, b) => a.price + b.price) / (item.product.length)
+};
