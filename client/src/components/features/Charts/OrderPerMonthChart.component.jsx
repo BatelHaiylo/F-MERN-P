@@ -19,9 +19,7 @@ ChartJS.register(
   Legend
 );
 
-export default function OrderPerMonthChart({ items }) {
-  // items.map((i) => console.log(i));
-
+export default function OrderPerMonthChart({ items }) {  
   const options = {
     responsive: true,
     plugins: {
@@ -34,7 +32,7 @@ export default function OrderPerMonthChart({ items }) {
       },
     },
   };
-const FilteredByOrderCost = items?.filter(item => item.orderInfo.purchaseSum> 700)
+  const FilteredByOrderCost = items?.filter(item => item.orderInfo.purchaseSum> 700)
   const labels = [
     "January",
     "February",
@@ -44,6 +42,7 @@ const FilteredByOrderCost = items?.filter(item => item.orderInfo.purchaseSum> 70
     "June",
     "July",
   ];
+  
   const data = {
     labels,
     datasets: [
@@ -53,13 +52,11 @@ const FilteredByOrderCost = items?.filter(item => item.orderInfo.purchaseSum> 70
         backgroundColor: "#cd2134",
       },
       {
-        label: "Avg of items per cart ",
-        data: [...FilteredByOrderCost.slice(0, 5).map((item) => item.orderInfo.purchaserInfo.purchaseSum
-)],
+        label: "Avg of items per order ",
+        data: [...FilteredByOrderCost.slice(0, 5).map((item) => item.orderInfo.purchaserInfo.itemsNum)],
         backgroundColor: "#cfe2ff"
       },
     ],
   };
   return <Bar options={options} data={data} />;
-}
-// data: [...items.slice(0, 7).map((item) => if(item.price > 700) {item.orderInfo.purchaseSum}
+};

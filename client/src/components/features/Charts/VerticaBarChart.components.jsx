@@ -20,7 +20,6 @@ ChartJS.register(
 );
 
 export default function VerticalBarChart({ items }) {
-  // items.map((i) => console.log(i));
   const options = {
     responsive: true,
     plugins: {
@@ -51,7 +50,7 @@ export default function VerticalBarChart({ items }) {
         data: [...items.slice(0, 7).map((item) => item.price)],
         backgroundColor: "rgba(255, 99, 132, 0.5)",
       },
-    ],
+    ]
   };
   return <Bar options={options} data={data} />;
-}
+};

@@ -3,7 +3,6 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
 export default function HighestOrderDay({ items }) {
-  // console.log( items.map(item =>item.orderInfo.purchaserInfo.date))
 
   const WeekDays = [
     "Monday",
@@ -17,23 +16,17 @@ export default function HighestOrderDay({ items }) {
   let OrdersDate = items.map(
     (item) => new Date(item.orderInfo.purchaserInfo.date)
   );
-//   console.log(OrdersDate)
 
   let HighestOrderSum = items?.map((item) => item.orderInfo.purchaseSum);
-  //   console.log(HighestOrderSum);
 
   let HighestOrderObj = items?.find(
     (item) => item.orderInfo.purchaseSum === Math.max(...HighestOrderSum)
   );
-    // console.log(HighestOrderObj);
 
   let HighObjDate = HighestOrderObj?.orderInfo.purchaserInfo.date;
-    // console.log("OBG:" ,HighObjDate);
 
   let date = new Date(HighObjDate);
   const day = WeekDays[date.getDay()];
-  //   console.log(day);
-    // console.log(OrdersDate[4]);
 
   return (
     <div>
