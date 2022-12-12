@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost:5050/api/users'
+const baseUrl = 'https://data-that.onrender.com/api/users'
 
 export const getAllUsers = async() => {
     try{

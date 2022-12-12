@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost:5050/api/orders'
+const baseUrl = 'https://data-that.onrender.com/api/orders'
 
 export const getAllOrders = async() => {
     try{
