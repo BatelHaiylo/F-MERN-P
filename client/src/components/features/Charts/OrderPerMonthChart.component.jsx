@@ -19,9 +19,7 @@ ChartJS.register(
   Legend
 );
 
-export default function OrderPerMonthChart({ items }) {
-  // items.map((i) => console.log(i));
-  
+export default function OrderPerMonthChart({ items }) {  
   const options = {
     responsive: true,
     plugins: {
@@ -44,8 +42,6 @@ export default function OrderPerMonthChart({ items }) {
     "June",
     "July",
   ];
-  console.log(FilteredByOrderCost)
-  console.log(...FilteredByOrderCost.slice(0, 5).map((item) => item.orderInfo.purchaserInfo.itemsNum))
   
   const data = {
     labels,

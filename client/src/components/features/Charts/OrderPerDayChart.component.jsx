@@ -23,8 +23,6 @@ export default function OrderPerDayChart({ items }) {
 
 let sum = 0
 const SumPerObj =[...items.map(obj => obj.product.map(item => sum += item.price))]
-// console.log("sum :" ,SumPerObj.map(item => item.reduce((a,b)=> a+b,0)));
-// console.log("avg :" ,SumPerObj.map(item => item.reduce((a,b)=> a+b,0) / item.length));
 
   const options = {
     responsive: true,
@@ -38,7 +36,6 @@ const SumPerObj =[...items.map(obj => obj.product.map(item => sum += item.price)
       },
     },
   };
-//   const labels = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   const labels = [...items.map(item => new Date(`${item.orderInfo.purchaserInfo.date}`).toLocaleDateString())];
   const data = {
     labels,

@@ -3,9 +3,7 @@ import Chart from "react-google-charts";
 
 
 export default function GeoChart({items}) {
-  
-  console.log(items)
-  
+    
   const setup =  ["Country", "Popularity"]
   const population = [
     {0: 9614 },
@@ -32,6 +30,5 @@ export default function GeoChart({items}) {
   };
   
   const data = [[...setup],...items?.slice(0,7).map((obj,i )=> [obj=obj.country.country, population[i][i]])];
-console.log(data)
   return <Chart chartType="GeoChart"  options={options} data={data} />
 };
