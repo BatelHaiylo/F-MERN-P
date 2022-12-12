@@ -3,9 +3,7 @@ import { DataGrid } from '@mui/x-data-grid'
 import { Paper } from '@mui/material'
 
 export default function SmartTable({data}) {
-    // console.log(data)
 
-    // console.log(data)
   const customersColumns = [
     {
       field: 'id',
@@ -75,8 +73,6 @@ export default function SmartTable({data}) {
     { id:i, role: obj.role, fullName: obj.fullName, phone: `${obj.country.MobilePrefix}-${obj.phone}`,
      email: obj.email, dateOfBirth: new Date(obj.dateOfBirth), location: obj.country.country})];
      
-    // console.log(customersRows)
-
   return (
     <div className="employees pb-5 mb-5">
       <h6>Employees table</h6>

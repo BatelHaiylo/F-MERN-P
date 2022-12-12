@@ -20,7 +20,6 @@ ChartJS.register(
 );
 
 export default function VerticalBarChart({ items }) {
-  // items.map((i) => console.log(i));
   const options = {
     responsive: true,
     plugins: {
