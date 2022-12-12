@@ -12,7 +12,7 @@ export default function Router() {
         <Route path="/" element={<Home />} />
 
         <Route
-          path="/dashboard"
+          path="dashboard"
           element={
             <ProductsProvider>
               <OrdersProvider>
