@@ -5,6 +5,7 @@ const cors = require('cors');
 require('./db/db');
 const passport = require('passport')
 require('./config/passport')(passport)
+const path = require('path')
 
 const usersRouter = require('./router/usersRouter');
 const purchasesRouter = require('./router/purchasesRouter');
@@ -29,3 +30,8 @@ app.get('/',(req,res)=>{
 app.listen(Port, ()=>{
     console.log(`server listen in port: ${Port}`);
 });
+
+app.use(express.static(path.join(__dirname, 'client', 'build')))
+app.get('*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'client','build', 'index.html'));
+  });
